@@ -74,7 +74,7 @@ export default function About() {
         <section className={styles.hero} aria-labelledby="about-hero-title">
           <div className={styles.bg} aria-hidden="true">
             <img
-              src="/images/amdcprojects comp/final website project images/Residential/terrace design sec 57 ggn/Residence terrace view 1 (4).jpg"
+              src="/images/amdcprojects/final website project images/Residential/terrace design sec 57 ggn/Residence terrace view 1 (4).jpg"
               alt="AMDC studio interior"
             />
           </div>
@@ -122,7 +122,7 @@ export default function About() {
             </div>
             <div className={styles.storyImage}>
               <img
-                src="/images/amdcprojects comp/final website project images/Residential/Raghav ggn/Raghav drawing room (4).jpg"
+                src="/images/amdcprojects/final website project images/Residential/Raghav ggn/Raghav drawing room (4).jpg"
                 alt="AMDC design team at work"
                 loading="lazy"
               />
@@ -240,7 +240,7 @@ export default function About() {
 
             <div className={styles.philosophyImage}>
               <img
-                src="/images/amdcprojects comp/final website project images/Commercial/honda plant walkway/Outdoor walkway 2 ps 1 (4).jpg"
+                src="/images/amdcprojects/final website project images/Commercial/honda plant walkway/Outdoor walkway 2 ps 1 (4).jpg"
                 alt="Design philosophy in practice"
                 loading="lazy"
               />

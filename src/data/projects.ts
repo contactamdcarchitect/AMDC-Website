@@ -1,7 +1,7 @@
 import { Project } from '@/types/project';
 
 // Base path for new client project images
-const BASE = '/images/amdcprojects comp/final website project images';
+const BASE = '/images/amdcprojects/final website project images';
 
 export const projects: Project[] = [
 

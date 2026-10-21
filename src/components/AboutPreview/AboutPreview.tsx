@@ -12,7 +12,7 @@ export default function AboutPreview() {
         {/* Image */}
         <div className={styles.imageWrap}>
           <img
-            src="/images/amdcprojects comp/final website project images/Residential/tarun/TARUN LIVING view  (1).jpg"
+            src="/images/amdcprojects/final website project images/Residential/tarun/TARUN LIVING view  (1).jpg"
             alt="AMDC design studio workspace"
             loading="lazy"
           />
