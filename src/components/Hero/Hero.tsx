@@ -1,19 +1,19 @@
 import { useEffect, useRef, useState, useCallback } from 'react';
 import styles from './Hero.module.scss';
 
-// Optimised images (compressed from 22MB → ~300-800KB each)
+// Compressed WebP hero images for ultra-fast loading
 const HERO_IMAGES = [
-  '/images/amdc hero images/optimised/A7R02100-HDR.jpg.jpg',
-  '/images/amdc hero images/optimised/DSC07991.jpg.jpg',
-  '/images/amdc hero images/optimised/Residence Langaleswar (1).jpg.jpg',
-  '/images/amdc hero images/optimised/Gupta Residence.jpg.jpg',
-  '/images/amdc hero images/optimised/Container exterior (1).jpg.jpg',
-  '/images/amdc hero images/optimised/Meditation centre view 1 (9).jpg.jpg',
-  '/images/amdc hero images/optimised/Netaji museum1 (3).jpg.jpg',
-  '/images/amdc hero images/optimised/Netaji museum1 (7).jpg.jpg',
-  '/images/amdc hero images/optimised/Outdoor.jpg.jpg',
-  '/images/amdc hero images/optimised/PS 3.jpg.jpg',
-  '/images/amdc hero images/optimised/ELEVATION 10 (2).jpg.jpg',
+  '/images/amdc hero images/optimised/A7R02100-HDR.webp',
+  '/images/amdc hero images/optimised/DSC07991.webp',
+  '/images/amdc hero images/optimised/Residence Langaleswar (1).webp',
+  '/images/amdc hero images/optimised/Gupta Residence.webp',
+  '/images/amdc hero images/optimised/Container exterior (1).webp',
+  '/images/amdc hero images/optimised/Meditation centre view 1 (9).webp',
+  '/images/amdc hero images/optimised/Netaji museum1 (3).webp',
+  '/images/amdc hero images/optimised/Netaji museum1 (7).webp',
+  '/images/amdc hero images/optimised/Outdoor.webp',
+  '/images/amdc hero images/optimised/PS 3.webp',
+  '/images/amdc hero images/optimised/ELEVATION 10 (2).webp',
 ];
 
 const INTERVAL_MS = 5000;

@@ -318,11 +318,11 @@
   left: 0;
   right: 0;
   z-index: $z-navbar + 5;
-  background: rgba(250, 249, 247, 0.96);
-  backdrop-filter: blur(24px) saturate(180%);
-  -webkit-backdrop-filter: blur(24px) saturate(180%);
-  border-top: 1px solid rgba(0, 0, 0, 0.08);
-  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.07);
+  background: rgba(250, 249, 247, 0.72);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-top: 1px solid rgba(255, 255, 255, 0.45);
+  box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.08);
   padding: 0.45rem 0.5rem;
   padding-bottom: calc(0.45rem + env(safe-area-inset-bottom, 0px));
   align-items: center;

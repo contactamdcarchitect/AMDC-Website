@@ -12,17 +12,17 @@ export default function Loader({ onComplete }: LoaderProps) {
   useEffect(() => {
     let current = 0;
     const interval = setInterval(() => {
-      current += Math.random() * 15 + 5;
+      current += Math.random() * 28 + 18;
       if (current >= 100) {
         current = 100;
         clearInterval(interval);
         setTimeout(() => {
           setHidden(true);
-          setTimeout(onComplete, 600);
-        }, 400);
+          setTimeout(onComplete, 300);
+        }, 150);
       }
       setPercent(Math.floor(current));
-    }, 120);
+    }, 45);
     return () => clearInterval(interval);
   }, [onComplete]);
 
