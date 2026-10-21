@@ -3,11 +3,11 @@ import styles from './Hero.module.scss';
 
 // Compressed WebP hero images for ultra-fast loading
 const HERO_IMAGES = [
+  '/images/amdc hero images/optimised/Container exterior (1).webp',
   '/images/amdc hero images/optimised/A7R02100-HDR.webp',
   '/images/amdc hero images/optimised/DSC07991.webp',
   '/images/amdc hero images/optimised/Residence Langaleswar (1).webp',
   '/images/amdc hero images/optimised/Gupta Residence.webp',
-  '/images/amdc hero images/optimised/Container exterior (1).webp',
   '/images/amdc hero images/optimised/Meditation centre view 1 (9).webp',
   '/images/amdc hero images/optimised/Netaji museum1 (3).webp',
   '/images/amdc hero images/optimised/Netaji museum1 (7).webp',
@@ -90,7 +90,7 @@ export default function Hero() {
             src={HERO_IMAGES[current]}
             srcSet={
               current === 0
-                ? '/images/amdc hero images/optimised/A7R02100-HDR-m.webp 768w, /images/amdc hero images/optimised/A7R02100-HDR.webp 1600w'
+                ? '/images/amdc hero images/optimised/Container exterior (1)-m.webp 768w, /images/amdc hero images/optimised/Container exterior (1).webp 1600w'
                 : undefined
             }
             sizes="100vw"
