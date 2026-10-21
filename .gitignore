@@ -44,6 +44,3 @@ logs/
 *.tiff
 *.psd
 *.raw
-
-# Project images folders
-public/images/amdcprojects comp/
