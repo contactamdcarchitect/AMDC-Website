@@ -75,6 +75,14 @@
   padding-bottom: clamp(4rem, 8vw, 7rem);
   max-width: $container-max;
   margin: 0 auto;
+
+  @media (max-width: $bp-md) {
+    padding-bottom: clamp(6.5rem, 16vh, 9.5rem);
+  }
+
+  @media (max-width: $bp-sm) {
+    padding-bottom: clamp(7.5rem, 20vh, 11rem);
+  }
 }
 
 .eyebrow {
@@ -87,6 +95,12 @@
   margin-bottom: 1.25rem;
   opacity: 0;
   transform: translateY(16px);
+
+  @media (max-width: $bp-sm) {
+    font-size: 0.65rem;
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.3em;
+  }
 
   &.animate {
     animation: textFadeUp 0.8s ease 0.3s forwards;
@@ -104,6 +118,12 @@
   opacity: 0;
   transform: translateY(28px);
   text-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+
+  @media (max-width: $bp-sm) {
+    font-size: clamp(2.3rem, 9.5vw, 3.2rem);
+    margin-bottom: 1.25rem;
+    line-height: 1.1;
+  }
 
   em {
     font-style: italic;
@@ -124,7 +144,7 @@
 
   @media (max-width: $bp-sm) {
     flex-direction: column;
-    gap: $space-sm;
+    gap: 0.65rem;
     width: 100%;
   }
 
@@ -150,7 +170,9 @@
 
   @media (max-width: $bp-sm) {
     width: 100%;
-    padding: 1rem;
+    padding: 0.85rem 1.25rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.16em;
   }
 
   &:hover {
@@ -178,7 +200,9 @@
 
   @media (max-width: $bp-sm) {
     width: 100%;
-    padding: 1rem;
+    padding: 0.85rem 1.25rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.16em;
   }
 
   &:hover {
@@ -256,7 +280,7 @@
   }
 
   @media (max-width: $bp-sm) {
-    bottom: 1.25rem;
+    bottom: calc(5.2rem + env(safe-area-inset-bottom, 0px));
   }
 }
 

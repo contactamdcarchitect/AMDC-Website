@@ -373,16 +373,6 @@
       color: #111111;
       font-weight: 600;
     }
-
-    &::after {
-      content: '';
-      position: absolute;
-      top: 0.15rem;
-      width: 4px;
-      height: 4px;
-      border-radius: 50%;
-      background: $color-gold;
-    }
   }
 
   &.bottomEnquire {

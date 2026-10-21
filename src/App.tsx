@@ -50,8 +50,8 @@ function App() {
   return (
     <HelmetProvider>
       <BrowserRouter>
+        <AppInner />
         {!loaded && <Loader onComplete={handleLoaderComplete} />}
-        {loaded && <AppInner />}
       </BrowserRouter>
     </HelmetProvider>
   );

@@ -88,6 +88,12 @@ export default function Hero() {
         <div key={`curr-${current}`} className={`${styles.slide} ${styles.slideIn}`}>
           <img
             src={HERO_IMAGES[current]}
+            srcSet={
+              current === 0
+                ? '/images/amdc hero images/optimised/A7R02100-HDR-m.webp 768w, /images/amdc hero images/optimised/A7R02100-HDR.webp 1600w'
+                : undefined
+            }
+            sizes="100vw"
             alt={`Hero image ${current + 1}`}
             className={styles.slideImg}
             fetchPriority={current === 0 ? 'high' : 'auto'}

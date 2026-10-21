@@ -5,11 +5,21 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Preload first hero image — eliminates initial lag -->
+  <!-- Preload first hero image for instant LCP on both mobile and desktop -->
   <link
     rel="preload"
     as="image"
-    href="/images/amdc hero images/optimised/A7R02100-HDR.jpg.jpg"
+    href="/images/amdc hero images/optimised/A7R02100-HDR-m.webp"
+    media="(max-width: 768px)"
+    type="image/webp"
+    fetchpriority="high"
+  />
+  <link
+    rel="preload"
+    as="image"
+    href="/images/amdc hero images/optimised/A7R02100-HDR.webp"
+    media="(min-width: 769px)"
+    type="image/webp"
     fetchpriority="high"
   />
   <meta name="theme-color" content="#0a0a0a" />
@@ -25,8 +35,17 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
+    rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Dancing+Script:wght@600;700&family=Inter:wght@300;400;500;600&display=swap"
-    rel="stylesheet" />
+    media="print"
+    onload="this.media='all'"
+  />
+  <noscript>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Dancing+Script:wght@600;700&family=Inter:wght@300;400;500;600&display=swap"
+    />
+  </noscript>
 </head>
 
 <body>
