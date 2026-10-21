@@ -36,7 +36,7 @@ export default function Projects() {
         <section className={styles.hero} aria-labelledby="projects-hero-title">
           <div className={styles.heroBg} aria-hidden="true">
             <img
-              src="/images/amdcprojects/final website project images/Residential/terrace design sec 57 ggn/Residence terrace view 1 (7).jpg"
+              src="/images/amdcprojects comp/final website project images/Residential/terrace design sec 57 ggn/Residence terrace view 1 (7).jpg"
               alt="AMDC project portfolio"
             />
           </div>

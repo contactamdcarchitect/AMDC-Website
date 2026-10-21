@@ -1,5 +1,6 @@
 import { useEffect, useState, useCallback, useRef } from 'react';
 import { NavLink, Link, useLocation, useNavigate } from 'react-router-dom';
+import { Home, User, LayoutGrid, Layers, Phone } from 'lucide-react';
 import styles from './Navbar.module.scss';
 
 export default function Navbar() {
@@ -12,15 +13,16 @@ export default function Navbar() {
 
   const handleScroll = useCallback(() => {
     const y = Math.max(0, window.scrollY);
+    const isMobile = typeof window !== 'undefined' && window.innerWidth <= 768;
 
     // Scrolled glass background effect kicks in after 60px
     setScrolled(y > 60);
 
-    // Always show near top (<= 80px) or when mobile menu is open
-    if (menuOpen || y <= 80) {
+    // On mobile, keep menu bar permanently sticky (never hide on scroll)
+    if (isMobile || menuOpen || y <= 80) {
       setHidden(false);
     } else if (y > lastScrollY.current + 5) {
-      setHidden(true);   // Scrolling down -> hide
+      setHidden(true);   // Scrolling down -> hide on desktop
     } else if (y < lastScrollY.current - 5) {
       setHidden(false);  // Scrolling up -> show
     }
@@ -131,18 +133,28 @@ export default function Navbar() {
             </button>
           </div>
 
-          {/* Hamburger */}
-          <button
-            className={`${styles.hamburger} ${menuOpen ? styles.open : ''}`}
-            onClick={() => setMenuOpen(v => !v)}
-            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-            aria-expanded={menuOpen}
-            aria-controls="mobile-nav"
-          >
-            <span />
-            <span />
-            <span />
-          </button>
+          {/* Mobile Right Controls: Quick Enquire CTA + Hamburger */}
+          <div className={styles.mobileRightControls}>
+            <button
+              className={styles.mobileBarCta}
+              onClick={() => scrollToSection('contact')}
+              aria-label="Enquire with AMDC"
+            >
+              Enquire
+            </button>
+
+            <button
+              className={`${styles.hamburger} ${menuOpen ? styles.open : ''}`}
+              onClick={() => setMenuOpen(v => !v)}
+              aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={menuOpen}
+              aria-controls="mobile-nav"
+            >
+              <span />
+              <span />
+              <span />
+            </button>
+          </div>
         </nav>
       </header>
 
@@ -197,6 +209,65 @@ export default function Navbar() {
           Enquire
         </button>
       </div>
+
+      {/* ── Sticky Bottom Menu Bar (Mobile) ───────────── */}
+      <nav
+        className={`${styles.bottomMenu} ${menuOpen ? styles.bottomMenuHidden : ''}`}
+        aria-label="Mobile sticky navigation"
+      >
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            `${styles.bottomItem} ${isActive ? styles.active : ''}`
+          }
+          aria-label="Home"
+        >
+          <Home className={styles.bottomIcon} size={20} />
+          <span className={styles.bottomLabel}>Home</span>
+        </NavLink>
+
+        <NavLink
+          to="/about"
+          className={({ isActive }) =>
+            `${styles.bottomItem} ${isActive ? styles.active : ''}`
+          }
+          aria-label="About"
+        >
+          <User className={styles.bottomIcon} size={20} />
+          <span className={styles.bottomLabel}>About</span>
+        </NavLink>
+
+        <NavLink
+          to="/projects"
+          className={({ isActive }) =>
+            `${styles.bottomItem} ${isActive ? styles.active : ''}`
+          }
+          aria-label="Projects"
+        >
+          <LayoutGrid className={styles.bottomIcon} size={20} />
+          <span className={styles.bottomLabel}>Projects</span>
+        </NavLink>
+
+        <button
+          type="button"
+          className={styles.bottomItem}
+          onClick={() => scrollToSection('services')}
+          aria-label="Services"
+        >
+          <Layers className={styles.bottomIcon} size={20} />
+          <span className={styles.bottomLabel}>Services</span>
+        </button>
+
+        <button
+          type="button"
+          className={`${styles.bottomItem} ${styles.bottomEnquire}`}
+          onClick={() => scrollToSection('contact')}
+          aria-label="Enquire"
+        >
+          <Phone className={styles.bottomIcon} size={20} />
+          <span className={styles.bottomLabel}>Enquire</span>
+        </button>
+      </nav>
     </>
   );
 }

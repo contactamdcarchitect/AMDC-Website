@@ -20,9 +20,22 @@
     transform 400ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
   transform: translateY(0);
 
-  // Hidden: slide navbar completely off the top
+  // Hidden: slide navbar completely off the top (desktop only)
   &.hidden {
     transform: translateY(-110%);
+  }
+
+  @media (max-width: $bp-md) {
+    padding: 0.85rem $container-padding;
+    transform: translateY(0) !important;
+    background: rgba(250, 249, 247, 0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.05);
+
+    &.hidden {
+      transform: translateY(0) !important;
+    }
   }
 }
 
@@ -129,6 +142,37 @@
   // Reset the underline pseudo-element inherited from .navLink
   &::after {
     display: none;
+  }
+}
+
+// ── Mobile Right Controls ────────────────────────────────────────────────────
+.mobileRightControls {
+  display: none;
+  align-items: center;
+  gap: 0.85rem;
+
+  @media (max-width: $bp-md) {
+    display: flex;
+  }
+}
+
+.mobileBarCta {
+  font-family: $font-sans;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: #111111;
+  padding: 0.45rem 0.95rem;
+  border-radius: 2px;
+  border: none;
+  cursor: pointer;
+  transition: background $transition-fast, transform $transition-fast;
+
+  &:active {
+    background: #333333;
+    transform: scale(0.98);
   }
 }
 
@@ -264,4 +308,105 @@
     color: #ffffff;
     transform: translateY(-2px);
   }
+}
+
+// ── Sticky Bottom Menu Bar (Mobile only) ────────────────────────────────────
+.bottomMenu {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: $z-navbar + 5;
+  background: rgba(250, 249, 247, 0.96);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.07);
+  padding: 0.45rem 0.5rem;
+  padding-bottom: calc(0.45rem + env(safe-area-inset-bottom, 0px));
+  align-items: center;
+  justify-content: space-around;
+  transition: transform $transition-base, opacity $transition-base;
+
+  @media (max-width: $bp-md) {
+    display: flex;
+  }
+
+  &.bottomMenuHidden {
+    transform: translateY(110%);
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.bottomItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+  color: #777777;
+  background: none;
+  border: none;
+  padding: 0.35rem 0.4rem;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  flex: 1;
+  min-width: 0;
+  transition: all $transition-fast;
+  position: relative;
+
+  &:active {
+    transform: scale(0.92);
+  }
+
+  &.active {
+    color: #111111;
+
+    .bottomIcon {
+      color: $color-gold;
+    }
+
+    .bottomLabel {
+      color: #111111;
+      font-weight: 600;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0.15rem;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: $color-gold;
+    }
+  }
+
+  &.bottomEnquire {
+    .bottomIcon {
+      color: $color-gold;
+    }
+    .bottomLabel {
+      color: $color-gold;
+      font-weight: 600;
+    }
+  }
+}
+
+.bottomIcon {
+  width: 20px;
+  height: 20px;
+  transition: color $transition-fast, transform $transition-fast;
+}
+
+.bottomLabel {
+  font-family: $font-sans;
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
 }

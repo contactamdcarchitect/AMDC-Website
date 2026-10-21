@@ -10,7 +10,7 @@ interface Service {
   tags: string[];
 }
 
-const BASE_IMG = '/images/amdcprojects/final website project images';
+const BASE_IMG = '/images/amdcprojects comp/final website project images';
 
 const SERVICES: Service[] = [
   {

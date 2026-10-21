@@ -124,3 +124,10 @@ html.lenis {
 .lenis.lenis-scrolling iframe {
   pointer-events: none;
 }
+
+// On mobile, ensure page content and footer are not hidden behind sticky bottom menu
+@media (max-width: $bp-md) {
+  body {
+    padding-bottom: calc(64px + env(safe-area-inset-bottom, 0px));
+  }
+}
